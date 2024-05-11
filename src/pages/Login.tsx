@@ -40,7 +40,7 @@ function Login() {
       emailOrUsername: data.email,
       password: data.password,
     });
-    console.log(data);
+    navigate("/projects");
   }
 
   useEffect(() => {
