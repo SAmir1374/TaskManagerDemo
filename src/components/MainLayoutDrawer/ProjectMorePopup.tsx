@@ -1,6 +1,5 @@
 import EditPenIcon from "../icons/EditPenIcon";
 import LinkIcon from "../icons/LinkIcon";
-import PaletteIcon from "../icons/PalatteIcon";
 import PlusIconNoBorderIcon from "../icons/PlusIconNoBorderIcon";
 import ShareIcon from "../icons/ShareIcon";
 import TrashIcon from "../icons/TrashIcon";

@@ -7,10 +7,10 @@ import { TagRoute } from "../api.routes";
 /*                            RenameTagById                                   */
 /* -------------------------------------------------------------------------- */
 
-type TagRenameTagByIdRequestBody = {
-  name: string;
-  color: string;
-};
+// type TagRenameTagByIdRequestBody = {
+//   name: string;
+//   color: string;
+// };
 
 type TagRenameTagByIdResponse = ResponseBody<{}>;
 

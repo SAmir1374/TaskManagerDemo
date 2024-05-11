@@ -4,15 +4,28 @@ import { Route, Routes as ReactRoutes } from "react-router-dom";
 import ProtectedRoute from "../ProtectedRoute";
 import { LayoutType, RouteType } from "..";
 
-function generateFlattenRoutes(routes): RouteType[] {
+function generateFlattenRoutes(routes : any): RouteType[] {
   if (!routes) return [];
   return flattenDeep(
-    routes.map(({ routes: subRoutes, ...rest }) => [
+    routes.map(({ routes: subRoutes, ...rest } : LayoutType) => [
       rest,
       generateFlattenRoutes(subRoutes),
     ])
   );
 }
+
+
+// function generateFlattenRoutes(routes: any): RouteType[] {
+//   if (!routes) return [];
+//   return flattenDeep(
+//     routes.map(({ routes: subRoutes, ...rest }: LayoutType) => [
+//       rest,
+//       generateFlattenRoutes(subRoutes),
+//     ])
+//   );
+// }
+
+
 
 export const renderRoutes = (mainRoutes: LayoutType[]) => {
   const Routes = ({ isAuthorized }: { isAuthorized: boolean }) => {
@@ -53,3 +66,52 @@ export const renderRoutes = (mainRoutes: LayoutType[]) => {
   };
   return Routes;
 };
+
+
+
+// import { Route, Routes as ReactRoutes } from "react-router-dom";
+// import { LayoutType, RouteType } from "..";
+// import ProtectedRoute from "../ProtectedRoute";
+// import flattenDeep from "lodash/flattenDeep";
+
+// function generateFlattenRoutes(routes: any): RouteType[] {
+//   if (!routes) return [];
+//   return flattenDeep(
+//     routes.map(({ routes: subRoutes, ...rest }: LayoutType) => [
+//       rest,
+//       generateFlattenRoutes(subRoutes),
+//     ])
+//   );
+// }
+
+// const renderRoutes = (mainRoutes: LayoutType[]) => {
+//   const Routes = ({ isAuthorized }: { isAuthorized: boolean }) => {
+//     const layouts = mainRoutes.map(({ layout: Layout, routes }, index) => {
+//       const subRoutes = generateFlattenRoutes(routes);
+
+//       return (
+//         <Route
+//           key={index}
+//           element={<Layout />}
+//         >
+//           {subRoutes.map((subRoute, subIndex) => (
+//             <Route
+//               key={subIndex}
+//               element={
+//                 <ProtectedRoute
+//                   isPublic={subRoute.isPublic}
+//                   isAuthorized={isAuthorized}
+//                 />
+//               }
+//               path={subRoute.path}
+//             />
+//           ))}
+//         </Route>
+//       );
+//     });
+//     return <ReactRoutes>{layouts}</ReactRoutes>;
+//   };
+//   return Routes;
+// };
+
+// export default renderRoutes;

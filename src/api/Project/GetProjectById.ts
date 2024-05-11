@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import AXIOS from "../../utils/axios";
 import { ResponseBody } from "../Types";
 

@@ -61,7 +61,7 @@ function TabList(): JSX.Element {
                               <div className="w-[63%] flex justify-center items-center mr-auto">
                                 <div className="w-full flex justify-around items-center">
                                   <div className="relative">
-                                    {task.taskAssigns.map((user) => {
+                                    {task.taskAssigns.map(() => {
                                       return (
                                         <Avatar
                                           src={ProfileImage}

@@ -7,10 +7,6 @@ import { BoardRoute } from "../api.routes";
 /*                             RenameBoard                                    */
 /* -------------------------------------------------------------------------- */
 
-type BoardRenameRequestBody = {
-    name : string
-}
-
 type BoardRenameBoardResponse = ResponseBody<{
   _id: string;
   name: string;

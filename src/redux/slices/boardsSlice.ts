@@ -1,5 +1,4 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { ProjectBoardType } from "../../api/Project/GetProjectById";
 
 type BoardSliceType = {
   _id: string;
