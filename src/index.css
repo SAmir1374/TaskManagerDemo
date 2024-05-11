@@ -1,0 +1,10 @@
+@import url("https://fonts.cdnfonts.com/css/dana");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+    font-family: 'Dana' !important; 
+}
